@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー - Business Report Bridge for Docs</title>
+<style>
+body{font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;max-width:760px;margin:0 auto;padding:24px 16px;line-height:1.8;color:#1a1a1a}
+h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:1px solid #ddd;padding-bottom:4px}
+table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:6px 10px;text-align:left;vertical-align:top}th{background:#f4f4f4}
+code{background:#f4f4f4;padding:1px 4px;border-radius:3px}
+</style>
+</head>
+<body>
+<h1>プライバシーポリシー — Business Report Bridge for Docs</h1>
+<p>最終更新日: 2026年10月22日<br>提供者: joji.shimegi<br>連絡先: joji.shimegi@mocal.co.jp</p>
+
+<h2>1. この拡張機能について</h2>
+<p>Business Report Bridge for Docs(以下「本拡張機能」)は、利用者が Gmail から送信した「業務報告」メールの本文を、利用者が指定した Google ドキュメントへ転記するための Chrome 拡張機能です。</p>
+
+<h2>2. 取得・利用する情報と目的</h2>
+<table>
+<tr><th>情報</th><th>利用目的</th></tr>
+<tr><td>Gmail の送信済みメール(件名に「業務報告」を含むもの)の件名・宛先・本文</td><td>転記対象の判定と、ドキュメントへ転記する内容の作成</td></tr>
+<tr><td>Google ドキュメントの内容(タブ構成・日付の見出し)</td><td>転記先の位置の判定と、報告の追記</td></tr>
+<tr><td>Google ドライブのフォルダ情報(利用者が指定したフォルダID)</td><td>転記先ドキュメントの確認</td></tr>
+<tr><td>利用者が設定したマッピング(宛先メールアドレス、医院名などの表示名、ドキュメントID、フォルダID、タブ名)と共通設定</td><td>宛先ごとの転記先の振り分け</td></tr>
+<tr><td>処理済みメールのIDと処理ログ</td><td>二重転記の防止、画面への結果表示</td></tr>
+<tr><td>利用者の Google アカウントのメールアドレス</td><td>接続中のアカウントの表示</td></tr>
+</table>
+<p>Gmail 画面上では、「メッセージを送信しました」の表示や送信ボタンの操作を検知して、確認処理を早めるためだけの小さなスクリプトが動きます。このスクリプトはメールの内容を読み取りません。</p>
+
+<h2>3. 情報の保管と送信</h2>
+<ul>
+<li>マッピングと共通設定は Chrome の同期ストレージ、処理ログと処理済みメールIDは端末内のストレージに保存します。同期ストレージは、利用者自身の Google アカウントを通じて、利用者の Chrome 間で同期される場合があります。</li>
+<li>本拡張機能は提供者のサーバーを持たず、<strong>情報を提供者や第三者のサーバーへ送信しません</strong>。通信先は Google の公式API(Gmail API・Google Docs API・Google Drive API)のみです。</li>
+<li>広告、アクセス解析、トラッキングは行いません。</li>
+<li>情報を販売、貸与、第三者へ提供しません。提供者が利用者の情報を閲覧することもありません。</li>
+<li>取得した Google ユーザーデータは、本拡張機能の機能提供のみに使用します。広告への利用や、AI モデルの学習には使用しません。本拡張機能による Google API から受け取った情報の利用と他アプリへの移転は、Limited Use の要件を含む <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API サービスのユーザーデータに関するポリシー</a>に準拠します。</li>
+</ul>
+
+<h2>4. 利用する権限</h2>
+<ul>
+<li><code>gmail.readonly</code>: 送信済みの業務報告メールを読み取るため。メールの送信・削除・変更はしません。</li>
+<li><code>documents</code>: 転記先ドキュメントへ追記するため。</li>
+<li><code>drive.readonly</code>: 指定フォルダ内のドキュメント情報を確認するため。</li>
+<li><code>identity</code> / <code>identity.email</code>: Google アカウントへの接続と、接続中アカウントの表示のため。</li>
+<li><code>storage</code>: 設定と処理ログを保存するため。</li>
+<li><code>alarms</code>: 一定間隔(既定 約5分)で新しい送信メールを確認するため。</li>
+<li><code>notifications</code>: 転記の成功・失敗を通知するため。</li>
+<li>Gmail(mail.google.com)と Google の API への通信: 上記の処理のため。</li>
+</ul>
+
+<h2>5. 個人情報を含む可能性のある内容の取り扱い</h2>
+<p>業務報告の本文に個人情報が含まれる場合があります。本拡張機能は本文を Google の API の間でのみ受け渡し、外部へ保存・送信しません。メールに含める内容の判断は、利用者(および所属組織の規程)の責任で行ってください。</p>
+
+<h2>6. データの削除</h2>
+<ul>
+<li>拡張機能の画面から、登録したマッピングを個別に削除できます。</li>
+<li>拡張機能を削除すると、ブラウザに保存された設定と処理ログも削除されます。</li>
+<li>Google アカウントとの接続は、Google アカウントの「サードパーティ製のアプリとサービス」からいつでも解除できます。</li>
+</ul>
+
+<h2>7. 変更</h2>
+<p>本ポリシーを変更する場合は、このページを更新し、最終更新日を改めます。</p>
+
+<h2>8. お問い合わせ</h2>
+<p>joji.shimegi@mocal.co.jp</p>
+</body>
+</html>
